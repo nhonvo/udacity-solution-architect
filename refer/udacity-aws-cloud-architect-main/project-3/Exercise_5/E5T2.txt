@@ -1,0 +1,31 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+
+- terrascan: https://runterrascan.io
+- tfsec: https://github.com/aquasecurity/tfsec
+- checkov: https://www.checkov.io/
+
+### Example vulnerability
+
+- Unencrypted S3 Buckets
+- Hardcoded secrets
+
+##Scan AMI’s or containers for OS vulnerabilities
+
+- Trivy: https://github.com/aquasecurity/trivy
+
+### Example vulnerability
+
+- Outdated packages
+- Exposed ports
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+
+- AWS Inspector
+- AWS GuardDuty
+
+### Example vulnerability
+
+- Unencrypted S3 Buckets
+- UnauthorizedAccess

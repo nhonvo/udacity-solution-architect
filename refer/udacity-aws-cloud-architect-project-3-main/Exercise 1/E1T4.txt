@@ -1,0 +1,7 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+Web Service Instance should not be placed in public subnet 1, it should be moved to private subnet 1
+Because if placed in public subnet 1 it is not safe, Services Instance and Database should be placed in private subnet
+# Poor practice 2
+Attack simulation Instance should be placed in the same private subnet, should place a bastion host in public subnet 2, then create a connection from the bastion host to the Attack simulation instance will be safer

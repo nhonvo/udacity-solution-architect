@@ -1,0 +1,26 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+1. Regula: https://github.com/fugue/regula
+2. Terrascan: https://github.com/accurics/terrascan
+3. Chef Inspect: https://github.com/inspec/inspec
+
+### Example vulnerability
+1. Server Side Encryption (SSE) not enabled.
+2. Access logs not enabled for supported resources.
+
+##Scan AMI’s or containers for OS vulnerabilities
+1. Ansible: https://github.com/ansible/ansible
+
+### Example vulnerability
+1. SSH root access with password login enabled.
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+1. AWS Config
+2. AWS GuardDuty
+3. AWS Inspector
+
+### Example vulnerability
+1. IAM role with policies allowing admin access.
+2. Unauthorized access attempts (e.g., EC2/SSH Brute Force).
+3. Missing server-side encryption for S3 buckets.

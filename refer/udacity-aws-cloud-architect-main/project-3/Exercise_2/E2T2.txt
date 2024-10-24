@@ -1,0 +1,15 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+1. IAM policy is allowing full S3 access
+2. Can access to port 5000 on EC2 instance from the internet
+3. Security Group is allowing access from any addresses, any ports, and any protocols
+4. LoadBalancer does not have HTTP->HTTPs redirection
+5. CloudTrail is not specified
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+1. Config IAM policy that allow only necessary permissions
+2. Disable port 5000 on EC2 instance
+3. Remove unneccessary traffics on Security Group
+4. Add HTTP->HTTPs redirection for LoadBalancer to redirect all http request to https
+5. Setup CloudTrail and store logs in S3

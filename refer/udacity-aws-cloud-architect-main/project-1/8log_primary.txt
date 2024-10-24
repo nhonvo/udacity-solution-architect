@@ -1,0 +1,36 @@
+ubuntu@ip-10-1-11-122:~$ mysql -h udacity-proj1-database-1.cp0w6cumezot.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 43
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use udacity;
+Database changed
+mysql> create table books (
+    ->     id int primary key auto_increment,
+    ->     title varchar(256),
+    ->     author_name varchar(256),
+    ->     published_date date
+    -> );
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> insert into books (title, author_name, published_date) values ("Object Oriented Programming", "Alex S", "2023-02-15");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from books;
++----+-----------------------------+-------------+----------------+
+| id | title                       | author_name | published_date |
++----+-----------------------------+-------------+----------------+
+|  1 | Object Oriented Programming | Alex S      | 2023-02-15     |
++----+-----------------------------+-------------+----------------+
+1 row in set (0.01 sec)
+
+mysql>

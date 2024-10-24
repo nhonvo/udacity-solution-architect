@@ -1,0 +1,12 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+- Setup AWS System Manager to access appication instance instead of public access via ssh
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+- Creating VPC private endpoints for S3 does not prevent the unauthorized access to the secrets bucket
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+- No, applying the default encryption setting to an S3 bucket will not encrypt the data that already exists. The default encryption setting in S3 ensures that any new objects uploaded to the bucket.
+
+# What would happen if the original cloud formation templates are applied to this environment.
+- If the original cloud formation templates are applied to this environment, CloudFormation will attempt to bring the resources back in line with the state defined in the template

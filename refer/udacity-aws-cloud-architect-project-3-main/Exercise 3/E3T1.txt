@@ -1,0 +1,21 @@
+
+# Describe GuardDuty's findings related to the brute force attack
+Detection: UnauthorizedAccess:EC2/SSHBruteForce
+Description: i-045ed4a726a3a4da7 is performing SSH brute force attacks on i-00f119b8ff32c56ed (Web Service Instance - C3), Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password
+
+# Study the AWS Guard Duty documentation page and explain how GuardDuty might detect this attack - i.e. what its source of information is.
+https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_concepts.html
+
+AWS GuardDuty is a security monitoring service that leverages machine learning, anomaly detection, and integrated threat intelligence to identify potential security threats within your AWS environment. When GuardDuty detects an attack, it typically relies on several key sources of information:
+
+VPC Flow Logs: GuardDuty analyzes network traffic patterns to identify unusual or suspicious behavior. For example, if there's an unexpected spike in traffic or communication with known malicious IP addresses, GuardDuty can flag this as a potential threat.
+
+CloudTrail Logs: AWS CloudTrail logs contain detailed records of API calls made within your AWS environment. GuardDuty examines these logs to detect unusual patterns or activities, such as unauthorized access attempts or unusual changes to resources.
+
+DNS Logs: GuardDuty can analyze DNS queries to detect potential domain-related threats. For instance, if there are DNS requests to known malicious domains or unusual DNS query patterns, GuardDuty can flag these as suspicious.
+
+Threat Intelligence Feeds: GuardDuty integrates threat intelligence from AWS and third-party sources to stay updated on known threats and malicious entities. This information helps GuardDuty identify activities involving known bad actors or compromised IP addresses.
+
+Anomaly Detection: By establishing a baseline of normal activity, GuardDuty can detect deviations from this baseline. For instance, if an instance begins behaving in a way that's inconsistent with its typical usage patterns—such as an unusual number of API calls or network connections—GuardDuty can raise an alert.
+
+By combining these sources of information and applying advanced detection techniques, GuardDuty can effectively identify and alert on a wide range of potential security threats in your AWS environment.

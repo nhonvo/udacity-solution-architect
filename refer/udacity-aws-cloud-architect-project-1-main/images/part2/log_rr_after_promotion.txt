@@ -1,0 +1,47 @@
+
+MySQL [(none)]> CREATE TABLE dog (name VARCHAR(20), owner VARCHAR(20),
+    ->        species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+ERROR 1046 (3D000): No database selected
+MySQL [(none)]> SHOW DATABASES:
+    -> ;exit
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':' at line 1
+    -> exit;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'exit
+exit' at line 1
+MySQL [(none)]> SHOW DATABASES; 
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.00 sec)
+
+MySQL [(none)]> CREATE DATABASE udacity2;
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [(none)]>  use udacity2;
+Database changed
+MySQL [udacity2]> 
+MySQL [udacity2]> CREATE TABLE dog (name VARCHAR(20), owner VARCHAR(20),
+    ->        species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+Query OK, 0 rows affected (0.05 sec)
+
+MySQL [udacity2]> INSERT INTO dog (name, owner, species, sex, birth, death)
+    -> VALUES 
+    ->     ('Tweety2', 'Jim', 'Bird', 'F', '2015-04-03', '2023-05-12');
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity2]> 
+MySQL [udacity2]> SELECT * FROM dog;
++---------+-------+---------+------+------------+------------+
+| name    | owner | species | sex  | birth      | death      |
++---------+-------+---------+------+------------+------------+
+| Tweety2 | Jim   | Bird    | F    | 2015-04-03 | 2023-05-12 |
++---------+-------+---------+------+------------+------------+
+1 row in set (0.00 sec)
+
+MySQL [udacity2]> 

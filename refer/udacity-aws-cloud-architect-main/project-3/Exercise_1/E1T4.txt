@@ -1,0 +1,7 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+- The WebAppSG's Inbound rules has a rule which allow access to server from all traffic types, all ports, all protocols and any addresses then attacker can use them to attack the server
+
+# Poor Practice 2: Overly Broad IAM Role Permissions
+The IAM role allows full access to all S3 buckets, which is risky. It should be limited to specific buckets needed for the application, and S3 policies should prevent public access unless necessary.

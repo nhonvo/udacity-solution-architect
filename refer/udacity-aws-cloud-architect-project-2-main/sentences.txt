@@ -1,0 +1,14 @@
+
+Reduced_Cost_Estimate
+1. Reduce the number of Ec2 to save cost
+2. Reduce Cloudfront support for maximum cache
+3. Reduce DB storage capacity
+4. Reduce S3 capacity
+
+
+
+Increased_Cost Estimate
+1. Increase Ec2 count to solve performance problem
+2. Increase Cloudfront support for maximum cache
+3. Increase DB storage capacity
+4. Increase S3 capacity

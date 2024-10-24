@@ -1,0 +1,7 @@
+Minimum RTO for a single AZ outage: In the event of a single AZ outage, the system can automatically failover to another AZ within the same region, typically within 1-5 minutes.
+
+Minimum RTO for a single region outage: If an entire region experiences an outage, the recovery time may range from 30 minutes to several hours, as operations need to be transferred to another region.
+
+Minimum RPO for a single AZ outage: With data synchronously replicated across AZs, the RPO is near zero, ensuring no data loss.
+
+Minimum RPO for a single region outage: If data is asynchronously replicated between regions, the RPO may range from a few seconds to several minutes, leading to potential data loss within that short timeframe.

